@@ -1,9 +1,9 @@
-export type TypeOfProject = "uiux" | "software" | "ds";
+export type TypeOfProject = "UI/UX" | "Software" | "Data Science";
 
 export interface IProject {
     _id: string;
-    title:string;
-    desc:string;
+    title: string;
+    desc: string;
     imageUrl: string;
     typeOfProject: TypeOfProject;
 }

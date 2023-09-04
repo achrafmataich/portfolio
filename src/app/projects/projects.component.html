@@ -14,7 +14,7 @@
             <div *ngFor="let prj of projects" class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img [src]="prj.imageUrl" alt="Project 1" class="w-full h-40 object-contain object-center">
                 <div class="p-4">
-                    <span class="inline-block rounded-full bg-zinc-100 text-zinc-800 lg:text-[10pt] lg:px-[4px] lg:py-[2px] sm:text-[8pt] sm:px-[4px] sm:py-[2px] text-[6pt] px-[2px] py-[1px]">{{prj.typeOfProject}}</span>
+                    <span [ngClass]="getPillClass(prj.typeOfProject)" class="inline-block rounded-full bg-gradient-to-r lg:text-[10pt] lg:px-[4px] lg:py-[2px] sm:text-[8pt] sm:px-[4px] sm:py-[2px] text-[6pt] px-[2px] py-[1px]">{{prj.typeOfProject}}</span>
                     <h2 class="text-xl font-semibold text-gray-900">{{prj.title}}</h2>
                     <p class="mt-2 text-gray-700">{{prj.desc}}</p>
                     <a routerLink="." [fragment]="prj._id" class="mt-4 text-indigo-600 hover:underline">Learn More</a>

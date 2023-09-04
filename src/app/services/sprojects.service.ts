@@ -12,15 +12,15 @@ export class SProjectsService {
       _id: "1",
       title: "MeowApp",
       desc: "A Cross Platform mobile chat app written in React Native / Expo",
-      typeOfProject: "software",
-      imageUrl: "assets/img/react.png"
+      typeOfProject: "Software",
+      imageUrl: "assets/img/meowapp.svg"
     },
     {
       _id: "2",
       title: "Sportify",
       desc: "A Recommandation system that helps the coach to choose the best linup for a football team",
-      typeOfProject: "ds",
-      imageUrl: ""
+      typeOfProject: "Data Science",
+      imageUrl: "assets/img/LogoSportify.svg"
     }
   ];
 
