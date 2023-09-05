@@ -6,10 +6,4 @@ export class Project implements IProject {
     desc!: string;
     imageUrl!: string;
     typeOfProject!: TypeOfProject;
-
-    /**
-     *
-     */
-    constructor() {
-    }
 }

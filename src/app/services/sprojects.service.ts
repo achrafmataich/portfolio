@@ -24,8 +24,6 @@ export class SProjectsService {
     }
   ];
 
-  constructor() { }
-
   getProjects(): Observable<Project[]> {
     return of<Project[]>(this.projects);
   }
