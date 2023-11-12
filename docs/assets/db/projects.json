@@ -1,0 +1,137 @@
+[
+    {
+        "_id": "1",
+        "title": "MeowApp",
+        "desc": "A Cross Platform mobile chat app written in React Native / Expo",
+        "details": {
+            "overview": "",
+            "motivation": "",
+            "solution": "",
+            "benefits": [],
+            "technologies_used": [],
+            "links": [],
+            "codeExample": []
+        },
+        "typeOfProject": "Software",
+        "imageUrl": "assets/img/meowapp.svg"
+    },
+    {
+        "_id": "2",
+        "title": "Sportify",
+        "desc": "A Recommandation system that helps the coach to choose the best linup for a football team",
+        "details": {
+            "overview": "A recommendation system for football teams coach so they can choose the best lineup and the best position that a new player will fit in.",
+            "motivation": "Football coaches have a lot of data to consider when making decisions about their lineup and how to position their players.\r\n This data can include player statistics, team performance, and even weather conditions.\r\n It can be difficult and time-consuming for coaches to manually analyze all of this data and make informed decisions.",
+            "solution": "Sportify provides a solution to this problem by providing coaches with a machine learning-based recommendation system.\r\n Sportify takes in a variety of data inputs, such as player statistics, team performance, and weather conditions, and then uses KNN to recommend the best lineup and player positions.",
+            "benefits": [
+                "Save time and effort",
+                "Improve decision-making",
+                "Increase the chances of winning"
+            ],
+            "technologies_used": [
+                "WSL2",
+                "Docker",
+                {
+                    "name": "Python",
+                    "version": "3.9"
+                },
+                "Flask",
+                "K-nearest neighbors (KNN)"
+            ],
+            "links": [
+                "https://github.com/achrafmataich/sportify"
+            ]
+        },
+        "typeOfProject": "Data Science",
+        "imageUrl": "assets/img/LogoSportify.svg"
+    },
+    {
+        "_id": "3",
+        "title": "@outsiderninjadevs/core",
+        "desc": "An angular library that contains core modules for the @outsiderninjadevs projects",
+        "details": {
+            "overview": "@outsiderninjadevs/core is an npm library developed by the OutsiderNinjaDevs team. It serves as a central repository for core modules and functionalities essential for other projects within the OutsiderNinjaDevs ecosystem.\r\nCurrently, it offers a TypeScript-based Angular service designed to simplify the process of serializing a list of objects into a CSV file and making it ready for download.",
+            "motivation": "In the ever-evolving world of software development, creating robust, efficient, and maintainable utilities and libraries is crucial. OutsiderNinjaDevs aims to streamline its development process by centralizing core functionalities, making them accessible to various projects within the ecosystem.\r\nThe motivation behind @outsiderninjadevs/core is to:\r\n- Promote the efficient reuse of core components, reducing redundancy and accelerating development across different OutsiderNinjaDevs projects.\r\n- Ensure that essential functionalities are consistent and adhere to the same standards across all projects.\r\n- Provide developers with a comprehensive set of tools to simplify common tasks and allow them to focus on project-specific features and functionalities.",
+            "solution": "@outsiderninjadevs/core provides a solution to the identified problems by offering a centralized library",
+            "benefits": [
+                "Angular Service for CSV Serialization.",
+                "Consistency and Reusability.",
+                "Improved Development Workflow."
+            ],
+            "technologies_used": [
+                "Typescript",
+                {
+                    "name": "Angular/core",
+                    "version": "16"
+                }
+            ],
+            "links": [],
+            "codeExample": [
+                {
+                    "sec": "Creating new Angular app"
+                },
+                {
+                    "par": "Using the @angular/cli global installation, we will create our project"
+                },
+                {
+                    "code": "ng new my-super-app",
+                    "type": "powershell"
+                },
+                {
+                    "par": "The CLI will create a directory with the name of the project, we need to go to the directory and open it with the IDE you prefer"
+                },
+                {
+                    "sec": "Installing the @outsiderninjadevs/core package"
+                },
+                {
+                    "par": "@outsiderninjadevs/core package can be installed via npm install:"
+                },
+                {
+                    "code": "npm i @outsiderninjadevs/core",
+                    "type": "powershell"
+                },
+                {
+                    "sec": "Using the library"
+                },
+                {
+                    "par": "In the app.module.ts we need to add the module of our library"
+                },
+                {
+                    "code": "//imports ..\r\nimport { OndCoreModule } from '@outsiderninjadevs/core'\r\n\r\n@NgModule({\r\n//...\r\nimports:[\r\n\tOndCoreModule //the module we need\r\n]\r\n})export class AppModule",
+                    "type": "typescript"
+                },
+                {
+                    "par": "Now we need to inject the service in the component."
+                },
+                {
+                    "code": "//imports ..\r\nimport {OndCsvBuilderService} from '@outsiderninjadevs/core';\r\n\r\n@Component({\r\n// properties\r\n})\r\nexport class MyComponent {\r\nconstructor(\r\nprivate readonly csv: OndCsvBuilderService\r\n) {}\r\n\r\n}",
+                    "type": "typescript"
+                },
+                {
+                    "par": "Then we build our csv file and we download it."
+                },
+                {
+                    "code": "import {OndCsvBuilderService} from '@outsiderninjadevs/core';\r\n\r\n// imports\r\n\r\ninterface IUser {\r\n\tname: string;\r\n\tage: number;\r\n\tis_an_admin?: boolean;\r\n}\r\n\r\n@Component({\r\n\t// properties\r\n})\r\nexport class MyComponent {\r\n\tusersList: IUser[] = [\r\n\t\t{\r\n\t\t\tname: 'Achraf',\r\n\t\t\tage: 24\r\n\t\t},\r\n\t\t{\r\n\t\t\tname: 'Alae',\r\n\t\t\tage: 18\r\n\t\t},\r\n\t\t// ...\r\n\t];\r\n\r\n\tconstructor(\r\n\t\tprivate readonly csv: OndCsvBuilderService\r\n\t) {}\r\n\r\n\ton_click(){\r\n\t\t// toCSVAsync and downloadCSVAsync are asynchronous functions\r\n\t\tcsv.toCSVAsync<IUser>(usersList, ';') // the delimiter (;) is optional\r\n\t\t\t.then(async csvString => {\r\n\t\t\t\ttry{\r\n\t\t\t\t\tawait csv.downloadCSVAsync(csvString, 'users.csv');\r\n\t\t\t\t} catch (errorDown => {\r\n\t\t\t\t\talert('Error on download ' + errorDown);\r\n\t\t\t\t})\r\n\t\t\t}).catch(error => {\r\n\t\t\t\talert('Error ' + error);\r\n\t\t\t});\r\n\t}\r\n}",
+                    "type": "typescript"
+                }
+            ]
+        },
+        "typeOfProject": "Software",
+        "imageUrl": "assets/img/ond-logo.png"
+    },
+    {
+        "_id": "4",
+        "title": "@outsiderninjadevs/tabular",
+        "desc": "An angular library helps creating flexible data tables that are customizable",
+        "details": {
+            "overview": "",
+            "motivation": "",
+            "solution": "",
+            "benefits": [],
+            "technologies_used": [],
+            "links": []
+        },
+        "typeOfProject": "Software",
+        "imageUrl": "assets/img/ond-tabular-logo.png"
+    }
+]
