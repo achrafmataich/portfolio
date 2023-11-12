@@ -20,10 +20,10 @@
     "@angular/router": "^16.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "angular-cli-ghpages": "^1.0.7",
-    "ngx-vcard": "^4.1.16",
     "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "vcard4": "^4.0.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

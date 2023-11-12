@@ -13,7 +13,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { LineBreakPipe } from './pipes/line-break.pipe';
 import { SharedModule } from './shared/shared.module';
-import { NgxVcardModule } from 'ngx-vcard';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { NgxVcardModule } from 'ngx-vcard';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
-    NgxVcardModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
