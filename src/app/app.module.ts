@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,9 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { LineBreakPipe } from './pipes/line-break.pipe';
+import { SharedModule } from './shared/shared.module';
+import { NgxVcardModule } from 'ngx-vcard';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,15 @@ import { AboutComponent } from './about/about.component';
     ProjectDetailsComponent,
     FourOhFourComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    LineBreakPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
+    NgxVcardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

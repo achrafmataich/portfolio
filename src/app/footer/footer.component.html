@@ -4,9 +4,8 @@
             <div>
                 <p class="text-lg font-semibold">Contact Me:</p>
                 <a
-                [href]="vcDataUrl" 
-                download="achrafmataich.vcf" 
-                class="flex flex-row items-center mt-2 p-2 rounded-full ring-1 ring-indigo-600 transition hover:bg-indigo-500 hover:text-gray-200">
+                [vcdDownloadVCard]="data"
+                class="flex flex-row items-center mt-2 p-2 rounded-full ring-1 ring-indigo-600 transition hover:bg-indigo-500 hover:text-gray-200 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 me-1 min-h-6 min-w-6" fill="none"
                         viewBox="0 0 32 32" xml:space="preserve">
                         <style type="text/css">
