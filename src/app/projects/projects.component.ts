@@ -11,10 +11,7 @@ import { TypeOfProject } from '../interfaces/iproject';
 export class ProjectsComponent implements OnInit {
 
   projects: Project[] = [];
-
-  /**
-   *
-   */
+  
   constructor(
     private projectsService: SProjectsService
   ) { }
