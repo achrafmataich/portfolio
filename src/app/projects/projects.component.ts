@@ -23,10 +23,15 @@ export class ProjectsComponent implements OnInit {
     this.fetchProjects();
   }
 
-  fetchProjects(): void {
-    this.projectsService.getProjects().subscribe(projects => {
-      this.projects = projects;
-    });
+  fetchProjects = async () => {
+    try {
+      this.projectsService.getProjects()
+        .subscribe(projects => {
+          this.projects = projects;
+        });
+    } catch (error) {
+      console.error(error instanceof Error ? error.message : "Something went wrong when trying to fetch projects");
+    }
   }
 
   // Function to determine the CSS class based on the project type

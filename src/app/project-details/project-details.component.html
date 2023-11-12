@@ -1,1 +1,78 @@
-<p>project-details works!</p>
+<div class="mx-auto bg-zinc-100 text-gray-700 mt-6 py-32 sm:py-48 lg:py-56">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight">{{project && project.title || "N/A"}}</h1>
+            <p class="mt-4 text-xl">{{project && project.desc || "N/A"}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Projects Section -->
+<div class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div *ngIf="project; else noProject">
+
+            <h2 class="text-2xl font-bold mt-5">Overview</h2>
+            <p [innerHTML]="project.details.overview | lineBreak"></p>
+            <!---->
+            <h2 class="text-2xl font-bold mt-5">Motivation</h2>
+            <p [innerHTML]="project.details.motivation | lineBreak"></p>
+            <!---->
+            <h2 class="text-2xl font-bold mt-5">Solution</h2>
+            <p [innerHTML]="project.details.solution | lineBreak"></p>
+            <!---->
+            <h2 class="text-2xl font-bold mt-5">Benefits</h2>
+            <div *ngIf="project.details.benefits && project.details.benefits.length > 0; else noBenefits">
+                <ul role="list" class="divide-y divide-indigo-100 ms-2">
+                    <li *ngFor="let item of project.details.benefits; let i = index">
+                        <span class="text-indigo-500 font-mono me-3">#{{i+1}}</span>
+                        <span>{{item}}</span>
+                    </li>
+                </ul>
+            </div>
+            <!---->
+            <h2 class="text-2xl font-bold mt-5">Technologies</h2>
+            <div
+                *ngIf="project.details.technologies_used && project.details.technologies_used.length > 0; else noTechnologies">
+                <ul role="list" class="divide-y divide-indigo-100 ms-2">
+                    <li *ngFor="let technology of project.details.technologies_used" class="text-indigo-900 p-3">
+                        <div *ngIf="isTechnologiesDetailed(technology); else notDetailedTechnology">
+                            <strong class="font-semibold">{{technology.name}}</strong>
+                            <small
+                                class="inline-block p-[1px] ms-2 bg-indigo-100 ring-1 ring-indigo-200 text-indigo-800 rounded-full">version
+                                {{technology.version}}</small>
+                        </div>
+                        <ng-template #notDetailedTechnology>
+                            {{technology}}
+                        </ng-template>
+                    </li>
+                </ul>
+            </div>
+            <!---->
+            <h2 class="text-2xl font-bold mt-5">Example</h2>
+            <div *ngIf="project.details.codeExample && project.details.codeExample.length > 0; else noCodeExample">
+                <div *ngFor="let el of project.details.codeExample">
+                    <h3 class="text-lg font-semibold mt-3 text-indigo-900 underline decoration-indigo-400" *ngIf="isSection(el)">{{el.sec}}</h3>
+                    <p *ngIf="isParagraph(el)">{{el.par}}</p>
+                    <app-prism *ngIf="isCode(el)" [code]="el.code" [language]="el.type"></app-prism>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noProject>
+    No project
+</ng-template>
+
+<ng-template #noBenefits>
+    <span class="text-gray-600">No benefits provided</span>
+</ng-template>
+
+<ng-template #noTechnologies>
+    <span class="text-gray-600">No technologies provided</span>
+</ng-template>
+
+<ng-template #noCodeExample>
+    <span class="text-gray-600">No code examples provided</span>
+</ng-template>
