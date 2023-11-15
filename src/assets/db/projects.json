@@ -9,8 +9,7 @@
             "solution": "",
             "benefits": [],
             "technologies_used": [],
-            "links": [],
-            "codeExample": []
+            "links": []
         },
         "typeOfProject": "Software",
         "imageUrl": "assets/img/meowapp.svg"
@@ -66,7 +65,7 @@
                 }
             ],
             "links": [],
-            "codeExample": [
+            "details": [
                 {
                     "sec": "Creating new Angular app"
                 },

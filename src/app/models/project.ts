@@ -7,4 +7,5 @@ export class Project implements IProject {
     details!: IProjectDetails;
     imageUrl!: string;
     typeOfProject!: TypeOfProject;
+    
 }

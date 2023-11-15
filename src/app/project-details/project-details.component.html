@@ -1,14 +1,14 @@
-<div class="mx-auto bg-zinc-100 text-gray-700 mt-6 py-32 sm:py-48 lg:py-56">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h1 class="text-4xl font-extrabold tracking-tight">{{project && project.title || "N/A"}}</h1>
-            <p class="mt-4 text-xl">{{project && project.desc || "N/A"}}</p>
+<div class="my-6 heading-card">
+    <div>
+        <div>
+            <h1>{{project && project.title || "N/A"}}</h1>
+            <p>{{project && project.desc || "N/A"}}</p>
         </div>
     </div>
 </div>
 
 <!-- Projects Section -->
-<div class="bg-white py-16">
+<div class="bg-white py-2">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div *ngIf="project; else noProject">
 
@@ -49,9 +49,9 @@
                 </ul>
             </div>
             <!---->
-            <h2 class="text-2xl font-bold mt-5">Example</h2>
-            <div *ngIf="project.details.codeExample && project.details.codeExample.length > 0; else noCodeExample">
-                <div *ngFor="let el of project.details.codeExample">
+            <h2 class="text-2xl font-bold mt-5">Details</h2>
+            <div *ngIf="project.details.details && project.details.details.length > 0; else noDetails">
+                <div *ngFor="let el of project.details.details">
                     <h3 class="text-lg font-semibold mt-3 text-indigo-900 underline decoration-indigo-400" *ngIf="isSection(el)">{{el.sec}}</h3>
                     <p *ngIf="isParagraph(el)">{{el.par}}</p>
                     <app-prism *ngIf="isCode(el)" [code]="el.code" [language]="el.type"></app-prism>
@@ -73,6 +73,6 @@
     <span class="text-gray-600">No technologies provided</span>
 </ng-template>
 
-<ng-template #noCodeExample>
-    <span class="text-gray-600">No code examples provided</span>
+<ng-template #noDetails>
+    <span class="text-gray-600">No details provided</span>
 </ng-template>

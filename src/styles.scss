@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heading-card {
+    @apply text-gray-700 mx-3 py-4 bg-slate-100 rounded-xl;
+
+    div {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+
+        div {
+            @apply text-left;
+
+            h1 {
+                @apply text-base sm:text-xl lg:text-3xl font-bold tracking-tight text-indigo-900 break-all;
+            }
+
+            p {
+                @apply mt-4 text-sm sm:text-lg lg:text-2xl break-before-all;
+            }
+        }
+    }
+}
