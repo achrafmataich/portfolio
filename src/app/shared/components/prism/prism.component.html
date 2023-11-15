@@ -2,5 +2,5 @@
     <small class="absolute top-0 right-0 text-xs -translate-y-1/2 bg-gray-700 text-slate-200 py-1 px-4 flex justify-center items-center rounded-full">
         {{language}}
     </small>
-    <pre *ngIf="language" class="language-{{ language }}"><code #codeEle class="language-{{ language }}">{{code}}</code></pre>
+    <pre *ngIf="language" class="language-{{ language }} overflow-scroll"><code #codeEle class="language-{{ language }}">{{code}}</code></pre>
 </div>

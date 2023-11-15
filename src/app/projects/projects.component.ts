@@ -6,7 +6,7 @@ import { TypeOfProject } from '../interfaces/iproject';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
 
@@ -35,11 +35,11 @@ export class ProjectsComponent implements OnInit {
   getPillClass(type: TypeOfProject): string {
     switch (type) {
       case 'UI/UX':
-        return 'from-blue-600 to-blue-400 text-white';
+        return 'from-blue-200 to-blue-50 text-green-800';
       case 'Software':
-        return 'from-green-800 to-green-600 text-white';
+        return 'from-green-200 to-green-50 text-green-800';
       case 'Data Science':
-        return 'from-yellow-600 to-yellow-500 text-white';
+        return 'from-yellow-200 to-yellow-50 text-yellow-800';
       default:
         return 'from-gray-100 to-gray-50 text-gray-700'; // Default class if type is not recognized
     }

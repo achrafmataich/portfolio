@@ -27,7 +27,7 @@ export interface IProjectDetails {
     benefits?: string[];
     technologies_used?: Technology[];
     links?: string[];
-    codeExample?: CodeExampleType[];
+    details?: CodeExampleType[];
 };
 
 export interface IProject {
